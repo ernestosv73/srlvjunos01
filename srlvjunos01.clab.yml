@@ -23,6 +23,6 @@ topology:
       startup-config: vjunos.cfg
 
   links:
-    - endpoints: ["srl:e1-1", "vswitch:eth1"]
+    - endpoints: ["srl1:e1-1", "vswitch:eth1"]
     - endpoints: ["router1:eth1", "vswitch:eth2"]
     
