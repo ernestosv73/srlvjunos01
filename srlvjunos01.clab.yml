@@ -22,7 +22,14 @@ topology:
       image: vrnetlab/vr-vjunosswitch:23.2R1.14
       startup-config: vjunos.cfg
 
+    PC3:
+      kind: linux
+      image: praqma/network-multitool:extra
+      exec:
+      - ip -6 route del default dev eth0      
+
   links:
     - endpoints: ["srl1:e1-1", "vswitch:eth1"]
     - endpoints: ["router1:eth1", "vswitch:eth2"]
+    - endpoints: ["PC3:eth1", "vswitch:eth3"]
     
